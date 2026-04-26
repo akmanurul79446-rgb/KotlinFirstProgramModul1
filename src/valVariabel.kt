@@ -1,9 +1,15 @@
 fun main(args: Array<String>) {
+    // 1. Penggunaan 'var' (Bisa diubah nilainya)
     var varVariabel: Int
-    varVariabel = 56 //assigning first value to varVariabel
-    println("Pemberian nilai pertama pada varVariabel = "+varVariabel)
-    varVariabel = 78 //assigning second value to varVariabel
-    println("Pemberian nilai kedua pada varVariabel = "+varVariabel)
+    varVariabel = 56
+    println("Pemberian nilai pertama pada varVariabel = $varVariabel")
+
+    varVariabel = 78
+    println("Pemberian nilai kedua pada varVariabel = $varVariabel")
+
+    // 2. Penggunaan 'val' (Tetap/Konstanta)
     val phi = 3.14
-    phi = 2.5
-} 
+    println("Nilai phi tetap = $phi")
+
+    // phi = 2.5 // Baris ini HARUS dihapus atau dikomentar karena akan menyebabkan ERROR
+}

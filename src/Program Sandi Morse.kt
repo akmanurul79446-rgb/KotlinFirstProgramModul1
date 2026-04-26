@@ -1,29 +1,33 @@
 fun main(args: Array<String>) {
-    // split() and joinToString() 
-    // Morse code decoder 
-    // the string which we want to decode 
+    // 1. Pesan Morse yang akan didekode
     val s = ".. -.-. - ... --- -.-. .. .- .-.."
     println("The original message: $s")
 
-    // the string with the decoded message 
     var message = ""
 
-    // array definitions 
+    // 2. Definisi alfabet dan array Morse
     val alphabetChars = "abcdefghijklmnopqrstuvwxyz"
-    val morseChars = arrayOf(".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-",
-        ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "-
-                ..")
 
-        // splitting the string into Morse characters
-        val characters = s.split(" ")
+    // Perbaikan: Pastikan semua string morse berada dalam satu baris yang benar
+    val morseChars = arrayOf(
+        ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-",
+        ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-",
+        ".--", "-..-", "-.--", "--.."
+    )
 
-    // iterating over Morse characters 
+    // 3. Memecah string Morse berdasarkan spasi
+    val characters = s.split(" ")
+
+    // 4. Proses Dekode
     for (morseChar in characters) {
+        // Mencari posisi karakter morse di dalam array morseChars
         val index = morseChars.indexOf(morseChar)
-        // character was found 
+
+        // Jika ditemukan (index tidak -1), ambil huruf yang sesuai dari alphabetChars
         if (index != -1) {
             message += alphabetChars[index]
         }
     }
+
     println("The decoded message: $message")
-} 
+}
